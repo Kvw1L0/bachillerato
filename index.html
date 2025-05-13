@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bachillerato Digital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Bachillerato</h1>
+
+    <div class="timer-section">
+      <button id="startStopBtn" onclick="toggleTimer()">▶️ Iniciar</button>
+      <div id="countdown">60</div>
+    </div>
+
+    <div id="game-box" class="glow-border">
+      <div class="id-display-inside">ID: <span id="gameIdDisplay">...</span></div>
+      <table>
+        <tr><th class="cat-col">Categoría</th><th>Tu Respuesta</th></tr>
+        <tr><td class="cat-col">Nombre</td><td><input type="text" class="input" id="cat-nombre" /></td></tr>
+        <tr><td class="cat-col">Apellido</td><td><input type="text" class="input" id="cat-apellido" /></td></tr>
+        <tr><td class="cat-col">Ciudad o País</td><td><input type="text" class="input" id="cat-ciudad" /></td></tr>
+        <tr><td class="cat-col">Animal</td><td><input type="text" class="input" id="cat-animal" /></td></tr>
+        <tr><td class="cat-col">Fruta o Verdura</td><td><input type="text" class="input" id="cat-fruta" /></td></tr>
+        <tr><td class="cat-col">Objeto</td><td><input type="text" class="input" id="cat-objeto" /></td></tr>
+        <tr><td class="cat-col">Color</td><td><input type="text" class="input" id="cat-color" /></td></tr>
+        <tr><td class="cat-col">Profesión</td><td><input type="text" class="input" id="cat-profesion" /></td></tr>
+      </table>
+    </div>
+
+    <div id="alert-message" class="hidden">¡Toma una captura de pantalla y envíala rápidamente!</div>
+
+    <div class="buttons">
+      <button id="captureBtn" onclick="captureScreen()">📸 Capturar</button>
+      <button onclick="sendWhatsApp()">📲 Enviar</button>
+    </div>
+
+    <canvas id="confettiCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"></canvas>
+
+    <audio id="sound-start" src="sounds/start.mp3" preload="auto"></audio>
+    <audio id="sound-countdown" src="sounds/countdown.mp3" preload="auto"></audio>
+    <audio id="sound-victory" src="sounds/victory.mp3" preload="auto"></audio>
+
+    <script src="html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
